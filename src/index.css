@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import "tailwindcss";
+
+
+*{
+  font-family: "Rubik";
+}
+
+body{
+  background-image: url("/pattern-bg-desktop.png");
+  background-repeat: no-repeat;
+    background-size: cover;
+}
