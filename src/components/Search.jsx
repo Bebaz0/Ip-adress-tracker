@@ -5,7 +5,7 @@ function Search(props) {
 
     // Function to handle the search button click
     const searchIp = () => {
-        if (props.inputValue.trim() !== '') {
+        if (inputValue.trim() !== '') {
             props.handleSearch(inputValue);
         }
     }
