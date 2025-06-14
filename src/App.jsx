@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import Search from "./components/Search.jsx";
 import Results from "./components/Results.jsx";
+import Map from "./components/Map.jsx";
 
 
 const API_KEY = import.meta.env.VITE_IP_API_KEY;
@@ -59,6 +60,7 @@ function App() {
             </h1>
         </div>
             <Results ipData={ipData} />
+            <Map ipData={ipData}/>
         </div>
     );
 }

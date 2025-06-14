@@ -2,7 +2,7 @@
 import React from 'react';
 
 function Results(props) {
-    const data = props.ipData;
+    const data = props.ipData? props.ipData : [];
     return (
         <div className="flex justify-center items-center relative top-auto mx-auto">
             <div className="bg-white rounded-xl shadow-lg w-full max-w-4xl p-8">
