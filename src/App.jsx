@@ -55,9 +55,6 @@ function App() {
         <div className="mx-auto flex justify-center my-10 flex-col object-center items-center gap-8 max-w-[100%]">
             <h1 className="text-3xl font-bold text-white">IP Address Tracker</h1>
             <Search searching={searching} setSearching={setSearching} handleSearch={fetchData} />
-            <h1>
-                {ipData?.country? ipData.country : 'Loading...' }
-            </h1>
         </div>
             <Results ipData={ipData} />
             <Map ipData={ipData}/>

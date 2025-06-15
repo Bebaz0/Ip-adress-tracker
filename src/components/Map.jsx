@@ -1,33 +1,28 @@
 import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Icon } from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
 function Map(props) {
 
-    const position = props.Ipdata? [props.Ipdata.latitude, props.Ipdata.longitude] : [51.505, -0.09];
+    const position = props.ipData? [props.ipData.latitude, props.ipData.longitude] : [0, 0];
 
-    const customIcon = new Icon({
-        iconUrl: '/icons8-select-24.png',
-        iconSize: [20, 20],
-        // iconAnchor: [1, 1],
-        // popupAnchor: [-0, -76]
-    })
+    const mapKey = props.ipData ? `${props.ipData.latitude}-${props.ipData.longitude}` : 'default';
 
     return (
         <section className='map-component'>
-            <div className='map' style={{ height: '400px', width: '100%' }}>
+            <div className='map' style={{ height: '90vh', width: '100%' }}>
                 <MapContainer
                     center={position}
                     zoom={13}
                     scrollWheelZoom={true}
+                    key={mapKey}
                     style={{ height: '100%', width: '100%' }}
                 >
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     />
-                        <Marker position={position} icon={customIcon}>
+                        <Marker position={position}>
                             <Popup>
                                 <div>
                                     <strong>IP: {props.Ipdata?.ip || 'Unknown'}</strong><br/>
